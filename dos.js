@@ -99,6 +99,12 @@ function mostrar() {
 
     continuarIngresando = confirm("¿Continuar ingresando?");
   } while (continuarIngresando == true);
+  
+  
+  descuento = precio * cantidad * descuento;
+  precioBruto = precio * cantidad;
+  precioTotal = precioBruto - descuento;
+  
 
  //d) Informar el tipo("arena"; "cal"; "cemento") con mas cantidad de bolsas en el total de la compra.
     if (acumuladorArena > acumuladorCal && acumuladorArena > acumuladorCemento) {
@@ -111,11 +117,6 @@ function mostrar() {
       }
     }
   
-  
-  descuento = precio * cantidad * descuento;
-  precioBruto = precio * cantidad;
-  precioTotal = precioBruto - descuento;
-
 
   //a) El importe total a pagar, bruto sin descuento y...
   document.write("<br>Importe total bruto: " + precioBruto);
