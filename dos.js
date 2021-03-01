@@ -91,17 +91,6 @@ function mostrar() {
         break;
     }
 
-    //d) Informar el tipo("arena"; "cal"; "cemento") con mas cantidad de bolsas en el total de la compra.
-    if (acumuladorArena > acumuladorCal && acumuladorArena > acumuladorCemento) {
-      tipoMasBolsas = "arena";
-    } else {
-      if (acumuladorCal > acumuladorCemento) {
-        tipoMasBolsas = "cal";
-      } else {
-        tipoMasBolsas = "cemento";
-      }
-    }
-
     //e) El tipo mas caro
     if (flagMasCaro == false || precio > precioMasCaro) {
       tipoMasCaro = tipo;
@@ -111,7 +100,18 @@ function mostrar() {
     continuarIngresando = confirm("¿Continuar ingresando?");
   } while (continuarIngresando == true);
 
-
+ //d) Informar el tipo("arena"; "cal"; "cemento") con mas cantidad de bolsas en el total de la compra.
+    if (acumuladorArena > acumuladorCal && acumuladorArena > acumuladorCemento) {
+      tipoMasBolsas = "arena";
+    } else {
+      if (acumuladorCal > acumuladorCemento) {
+        tipoMasBolsas = "cal";
+      } else {
+        tipoMasBolsas = "cemento";
+      }
+    }
+  
+  
   descuento = precio * cantidad * descuento;
   precioBruto = precio * cantidad;
   precioTotal = precioBruto - descuento;
